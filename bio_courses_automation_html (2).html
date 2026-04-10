@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top 5 Bio Courses Without NEET</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      color: #ffffff;
+      line-height: 1.65;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 24px;
+      padding: 28px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.28);
+    }
+    .hero {
+      text-align: center;
+      padding: 12px 0 20px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      color: #facc15;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      max-width: 850px;
+      margin: 0 auto;
+      color: #e2e8f0;
+      font-size: 1.05rem;
+    }
+    .badge {
+      display: inline-block;
+      margin-top: 14px;
+      background: rgba(250, 204, 21, 0.16);
+      border: 1px solid rgba(250, 204, 21, 0.45);
+      color: #fde68a;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: bold;
+    }
+    .section {
+      background: rgba(255,255,255,0.07);
+      border-radius: 18px;
+      padding: 22px;
+      margin-top: 18px;
+      border-left: 5px solid #facc15;
+    }
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: #f8fafc;
+    }
+    h3 {
+      font-size: 1.08rem;
+      margin: 16px 0 8px;
+      color: #fde68a;
+    }
+    p {
+      color: #e5e7eb;
+      margin-bottom: 10px;
+    }
+    ul {
+      padding-left: 20px;
+      margin: 8px 0 12px;
+    }
+    li {
+      margin-bottom: 8px;
+      color: #e5e7eb;
+    }
+    .course-title {
+      font-size: 1.45rem;
+      color: #facc15;
+      margin-bottom: 10px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 12px;
+    }
+    .mini-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .mini-card strong {
+      color: #ffffff;
+    }
+    .highlight {
+      color: #fde68a;
+      font-weight: bold;
+    }
+    .cta-box {
+      margin-top: 24px;
+      padding: 22px;
+      text-align: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(37,211,102,0.18), rgba(59,130,246,0.18));
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 14px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: bold;
+    }
+    .footer-note {
+      text-align: center;
+      margin-top: 18px;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .whatsapp-popup {
+      width: 320px;
+      background: #ffffff;
+      color: #0f172a;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.30);
+      border: 1px solid rgba(0,0,0,0.08);
+      animation: popupIn 0.4s ease;
+    }
+    .popup-header {
+      background: #25D366;
+      color: #ffffff;
+      padding: 14px 16px;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .popup-body {
+      padding: 16px;
+    }
+    .popup-body p {
+      color: #334155;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+    .popup-btn {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: bold;
+    }
+    .popup-small {
+      margin-top: 10px;
+      font-size: 0.84rem;
+      color: #64748b;
+      text-align: center;
+    }
+    .whatsapp-circle {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      text-decoration: none;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+      flex-shrink: 0;
+    }
+    .close-popup {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .popup-wrap {
+      position: relative;
+    }
+    @keyframes popupIn {
+      from { opacity: 0; transform: translateY(14px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 1.8rem; }
+      .container { padding: 18px; }
+      .whatsapp-float {
+        right: 14px;
+        bottom: 14px;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+      }
+      .whatsapp-popup {
+        width: min(92vw, 320px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <h1>Top 5 Biology Courses Without NEET</h1>
+      <p class="subtitle">
+        A complete educational guide for biology students who do not want to pursue MBBS, but still want strong academic options, future career potential, relevant entrance exams, top colleges, and salary insights.
+      </p>
+      <div class="badge">Career Awareness Guide for Students</div>
+    </div>
+
+    <div class="section">
+      <h2>Why This Guide Matters</h2>
+      <p>
+        Many biology students think that if they do not clear NEET or do not want to pursue MBBS, their career options become limited. In reality, biology offers many high-potential pathways in research, healthcare, diagnostics, biotechnology, sustainability, and scientific innovation.
+      </p>
+      <p>
+        This guide explains five strong alternatives in a simple but educational way. It includes what each course is about, what students study, relevant entrance exams, top colleges, expected salary ranges, and who should consider each option.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="course-title">1. Bachelor of Genetic Science</div>
+      <p>
+        Bachelor of Genetic Science is an advanced biology-oriented program focused on genes, DNA, heredity, mutations, molecular biology, and disease analysis. It is one of the most future-focused fields because genetics is playing a major role in personalized medicine, biotechnology, disease prediction, and biomedical research.
+      </p>
+      <h3>What Students Study</h3>
+      <ul>
+        <li>DNA structure and function</li>
+        <li>Human genetics</li>
+        <li>Molecular biology</li>
+        <li>Cell biology</li>
+        <li>Genomics and bioinformatics</li>
+        <li>Genetic disorders and disease analysis</li>
+      </ul>
+      <h3>Why It Is Important</h3>
+      <p>
+        Genetics helps scientists and healthcare professionals understand inherited diseases, identify genetic risks, and build more targeted approaches to diagnosis and treatment. As medicine becomes more data-driven and precise, this field is becoming more valuable.
+      </p>
+      <div class="grid">
+        <div class="mini-card"><strong>Relevant Entrance Exams</strong><br>CUET, private university entrance tests, and for abroad-focused pathways: IELTS / TOEFL / SAT depending on country and university requirements.</div>
+        <div class="mini-card"><strong>Top Colleges</strong><br>Delhi University (related biosciences programs), BHU, Amity University, LPU, and international options such as Countries: USA, Canada, Australia, UK, Germany.</div>
+        <div class="mini-card"><strong>Estimated Salary</strong><br>Freshers: ₹3–6 LPA<br>Mid-level: ₹6–12 LPA<br>Research / international roles: ₹15+ LPA</div>
+        <div class="mini-card"><strong>Best For</strong><br>Students who enjoy advanced biology, research, healthcare innovation, data-based biology, and deep scientific study.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="course-title">2. Bachelor of Life Science</div>
+      <p>
+        Bachelor of Life Science is a broad and flexible degree that covers the study of living organisms and life processes. It provides a strong biology foundation and is a smart option for students who want multiple future possibilities rather than committing to one narrow specialization at the beginning.
+      </p>
+      <h3>What Students Study</h3>
+      <ul>
+        <li>Botany</li>
+        <li>Zoology</li>
+        <li>Microbiology</li>
+        <li>Biochemistry</li>
+        <li>Ecology</li>
+        <li>Physiology</li>
+        <li>Genetics and cell biology</li>
+      </ul>
+      <h3>Why It Is Important</h3>
+      <p>
+        This course builds a strong understanding of biological systems and opens up pathways into research, laboratory work, healthcare support, biotechnology, teaching, and higher studies. It is especially useful for students who want flexibility and a strong academic base.
+      </p>
+      <div class="grid">
+        <div class="mini-card"><strong>Relevant Entrance Exams</strong><br>CUET, state university entrance exams, and direct admission in many private colleges.</div>
+        <div class="mini-card"><strong>Top Colleges</strong><br>Delhi University, BHU, JNU for higher academic pathways, Christ University, and Fergusson College Pune.</div>
+        <div class="mini-card"><strong>Estimated Salary</strong><br>Freshers: ₹2.5–5 LPA<br>After specialization or higher study: ₹5–10 LPA<br>Research-focused growth: ₹10+ LPA</div>
+        <div class="mini-card"><strong>Best For</strong><br>Students who want a flexible biology degree and want to keep multiple future options open.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="course-title">3. Biotechnology</div>
+      <p>
+        Biotechnology is one of the most modern and high-growth biology-related fields. It combines biology with technology to solve problems in medicine, healthcare, agriculture, food science, industrial science, and pharmaceutical innovation.
+      </p>
+      <h3>What Students Study</h3>
+      <ul>
+        <li>Molecular biology</li>
+        <li>Genetic engineering</li>
+        <li>Biochemistry</li>
+        <li>Microbiology</li>
+        <li>Immunology</li>
+        <li>Industrial biotechnology</li>
+        <li>Bioinformatics</li>
+      </ul>
+      <h3>Why It Is Important</h3>
+      <p>
+        Biotechnology is directly connected to vaccine development, diagnostics, scientific research, pharma production, and innovation-led healthcare. It is a field with strong demand because it creates practical solutions for real-world biological challenges.
+      </p>
+      <div class="grid">
+        <div class="mini-card"><strong>Relevant Entrance Exams</strong><br>CUET, state CET exams such as WBJEE or KCET where applicable, private university exams like VITEEE and SRMJEEE, and IIT JAM later for postgraduate study.</div>
+        <div class="mini-card"><strong>Top Colleges</strong><br>VIT Vellore, SRM University, Amity University, JNU for research pathways, and IITs mainly for higher studies and advanced research.</div>
+        <div class="mini-card"><strong>Estimated Salary</strong><br>Freshers: ₹3–7 LPA<br>Mid-level: ₹7–15 LPA<br>Research / international roles: ₹20+ LPA</div>
+        <div class="mini-card"><strong>Best For</strong><br>Students who want a modern, innovation-driven, industry-relevant science career.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="course-title">4. Medical Laboratory Technology (MLT)</div>
+      <p>
+        Medical Laboratory Technology is a practical healthcare course that prepares students to work in laboratory testing, disease diagnosis, pathology support, and clinical diagnostics. It is one of the most job-oriented options for biology students who want to enter the healthcare field without becoming a doctor.
+      </p>
+      <h3>What Students Study</h3>
+      <ul>
+        <li>Clinical biochemistry</li>
+        <li>Pathology</li>
+        <li>Microbiology</li>
+        <li>Hematology</li>
+        <li>Diagnostic procedures</li>
+        <li>Lab equipment handling</li>
+        <li>Sample testing and analysis</li>
+      </ul>
+      <h3>Why It Is Important</h3>
+      <p>
+        Accurate diagnosis depends heavily on laboratory testing. Blood tests, urine tests, infection screening, pathology reports, and related diagnostics are essential to modern healthcare. This makes MLT a highly practical and employable course.
+      </p>
+      <div class="grid">
+        <div class="mini-card"><strong>Relevant Entrance Exams</strong><br>Mostly direct admission in many institutions; some colleges may consider CUET or state-level entrance tests.</div>
+        <div class="mini-card"><strong>Top Colleges</strong><br>AIIMS, PGIMER Chandigarh, Jamia Hamdard, Manipal University, and reputed state medical colleges.</div>
+        <div class="mini-card"><strong>Estimated Salary</strong><br>Freshers: ₹2–4 LPA<br>Experienced professionals: ₹4–8 LPA<br>Senior / international roles: ₹10+ LPA</div>
+        <div class="mini-card"><strong>Best For</strong><br>Students who want practical work, healthcare exposure, and comparatively faster job opportunities.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="course-title">5. Environmental Engineering / Environmental Science</div>
+      <p>
+        Environmental Engineering and Environmental Science focus on solving problems related to pollution, water treatment, waste management, climate change, sustainability, and ecological balance. These fields are becoming increasingly important as governments, industries, and communities face environmental challenges.
+      </p>
+      <h3>What Students Study</h3>
+      <ul>
+        <li>Environmental systems</li>
+        <li>Pollution control</li>
+        <li>Waste management</li>
+        <li>Water treatment</li>
+        <li>Ecology and climate science</li>
+        <li>Sustainable development</li>
+        <li>Environmental laws and policy</li>
+      </ul>
+      <h3>Why It Is Important</h3>
+      <p>
+        Environmental issues are now global priorities. This field prepares students to contribute to cleaner systems, sustainability planning, public health protection, and environmental risk management across both public and private sectors.
+      </p>
+      <div class="grid">
+        <div class="mini-card"><strong>Relevant Entrance Exams</strong><br>JEE Main for engineering-focused programs, CUET for science-oriented environmental programs, and various state CET exams.</div>
+        <div class="mini-card"><strong>Top Colleges</strong><br>IITs and NITs for engineering pathways, TERI School of Advanced Studies, Delhi University, BHU, and global options such as Countries: USA, Australia, Canada, Germany, Netherlands.</div>
+        <div class="mini-card"><strong>Estimated Salary</strong><br>Freshers: ₹3–6 LPA<br>Mid-level: ₹6–12 LPA<br>International opportunities: ₹15+ LPA</div>
+        <div class="mini-card"><strong>Best For</strong><br>Students who care about sustainability, nature, social impact, and science-driven problem-solving.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Quick Comparison</h2>
+      <ul>
+        <li><span class="highlight">Genetic Science:</span> Best for advanced biology, research, DNA, and future medical innovation.</li>
+        <li><span class="highlight">Life Science:</span> Best for flexibility and a broad academic foundation.</li>
+        <li><span class="highlight">Biotechnology:</span> Best for innovation, pharma, research, and technology-driven science careers.</li>
+        <li><span class="highlight">MLT:</span> Best for practical healthcare and job-oriented diagnostic roles.</li>
+        <li><span class="highlight">Environmental Science / Engineering:</span> Best for sustainability, social impact, and global environmental careers.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Important Reality Check</h2>
+      <p>
+        MBBS is not the only successful pathway for biology students. Your future depends on choosing the right course according to your interests, strengths, and long-term goals. A student who chooses the right specialization, builds practical skills, and studies from a good institution can create a strong and respectable career in many biology-related fields.
+      </p>
+    </div>
+
+    <div class="cta-box">
+      <h2>Need Personal Guidance?</h2>
+      <p>
+        If you want help with choosing the right course, understanding eligibility, finding top colleges, comparing fees, or planning your admission strategy, connect directly for guidance.
+      </p>
+      <a class="btn" href="https://careerlead.in/form.php" target="_blank">Get Free Counseling</a>
+      <p class="footer-note">Fill the form and our team will contact you</p>
+    </div>
+  </div>
+  <div class="whatsapp-float" id="whatsappLeadBox">
+    <div class="popup-wrap">
+      <div class="whatsapp-popup" id="whatsappPopup">
+        <div class="popup-header">
+          Talk to a Career Guide
+          <button class="close-popup" onclick="document.getElementById('whatsappPopup').style.display='none'">×</button>
+        </div>
+        <div class="popup-body">
+          <p>
+            Confused about the right biology course, best college, fees, or admission process? Fill the quick form and get personal guidance from our team.
+          </p>
+          <a class="popup-btn" href="https://careerlead.in/form.php" target="_blank">Fill the Form for Guidance</a>
+          <div class="popup-small">Fast response • Course guidance • College support</div>
+        </div>
+      </div>
+    </div>
+    <a class="whatsapp-circle" href="https://careerlead.in/form.php" target="_blank" aria-label="Get Free Counseling">💬</a>
+  </div>
+
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var popup = document.getElementById('whatsappPopup');
+        if (popup) popup.style.display = 'block';
+      }, 1800);
+    });
+  </script>
+</body>
+</html>
